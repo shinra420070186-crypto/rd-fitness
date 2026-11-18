@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RD Fitness Club &amp; Gym — Mandi</title>
+<meta property="og:title" content="RD Fitness Club & Gym — Mandi">
+<meta property="og:description" content="Mandi's 4.8-rated gym. Strength, coaching and classes at ARC Complex, School Bazaar Road. Open Mon–Sat, 5 AM – 10 PM.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f3f1ec; --paper2:#eae8e0; --ink:#111110; --accent:#e8321e;
+  --muted:#6e6c66; --line:#d6d3c8; --darkline:rgba(243,241,236,.16)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:72px}
+a{text-decoration:none;color:inherit}
+.display{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase}
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:60}
+.preview-strip{background:var(--ink);color:#b9b6ad;text-align:center;font-size:10.5px;letter-spacing:2.2px;text-transform:uppercase;padding:9px 12px}
+.preview-strip b{color:#fff;font-weight:600}
+nav{position:sticky;top:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--paper);border-bottom:2px solid var(--ink)}
+.wordmark{font-family:Anton,Impact,sans-serif;font-size:19px;letter-spacing:1.5px;text-transform:uppercase}
+.wordmark span{color:var(--accent)}
+nav .links{display:flex;gap:20px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;color:var(--muted)}
+nav .links a:hover{color:var(--ink)}
+.enquire-btn{border:2px solid var(--ink);padding:8px 15px;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700}
+.enquire-btn:active{background:var(--ink);color:var(--paper)}
+
+/* HERO — type only, no photo */
+.hero{padding:34px 20px 44px;max-width:820px;margin:0 auto}
+.hero-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;font-weight:600;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:14px}
+.hero-meta .r{color:var(--ink)}
+.hero-meta .r i{font-style:normal;color:var(--accent)}
+.hero h1{margin-top:26px;font-size:clamp(58px,16.5vw,118px);line-height:.94;letter-spacing:.005em}
+.hero h1 .outline{display:block;color:transparent;-webkit-text-stroke:2.5px var(--ink)}
+.hero h1 .solid{display:block}
+.hero h1 .dot{color:var(--accent);-webkit-text-stroke:0}
+.hero-sub{margin-top:22px;font-size:16px;line-height:1.65;color:#3d3c38;max-width:460px}
+.hero-sub b{color:var(--ink)}
+.cta-row{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 26px;font-size:13px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;border:2px solid var(--ink)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:active{background:var(--accent);border-color:var(--accent)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:active{background:var(--paper2)}
+.hero-note{margin-top:16px;font-size:12.5px;color:var(--muted);letter-spacing:.2px}
+
+/* MARQUEE — type only */
+.marquee{background:var(--ink);color:var(--paper);overflow:hidden;padding:13px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.marquee .track{display:flex;width:max-content;animation:scrollx 26s linear infinite}
+.marquee span{font-family:Anton,Impact,sans-serif;font-size:19px;letter-spacing:2.5px;text-transform:uppercase;white-space:nowrap;padding-right:14px}
+.marquee span i{font-style:normal;color:var(--accent);padding:0 10px}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* FACTS */
+.facts{max-width:820px;margin:0 auto;padding:10px 20px 0}
+.fact{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:20px 2px;border-bottom:1px solid var(--line)}
+.fact:first-child{border-top:1px solid var(--line);margin-top:34px}
+.fact .k{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.fact .v{font-family:Anton,Impact,sans-serif;font-size:30px;letter-spacing:.5px;text-transform:uppercase;text-align:right}
+.fact .v small{font-family:Inter,sans-serif;font-size:12.5px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--muted);display:block;margin-top:4px}
+
+/* TRAIN LIST */
+.section{max-width:820px;margin:0 auto;padding:64px 20px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.sec-head h2{font-family:Anton,Impact,sans-serif;font-size:clamp(34px,9vw,52px);line-height:1;text-transform:uppercase}
+.sec-head h2 i{font-style:normal;color:var(--accent)}
+.sec-head .tag{font-size:11px;letter-spacing:2.2px;text-transform:uppercase;font-weight:600;color:var(--muted);white-space:nowrap}
+.train-row{display:flex;gap:18px;padding:26px 2px;border-bottom:1px solid var(--line);align-items:flex-start}
+.train-row:first-of-type{border-top:1px solid var(--line);margin-top:28px}
+.train-row .num{font-family:Anton,Impact,sans-serif;font-size:20px;color:var(--accent);line-height:1.2;min-width:38px}
+.train-row h3{font-size:19px;font-weight:700;letter-spacing:.2px;text-transform:uppercase}
+.train-row p{color:var(--muted);font-size:14.5px;line-height:1.65;margin-top:6px;max-width:520px}
+
+/* MEMBERSHIP — inverted, flat black */
+.member{background:var(--ink);color:var(--paper);margin-top:72px;padding:64px 20px 58px}
+.member .in{max-width:820px;margin:0 auto}
+.member .eyebrow{font-size:11px;letter-spacing:2.6px;text-transform:uppercase;font-weight:600;color:#b9b6ad}
+.member h2{font-family:Anton,Impact,sans-serif;font-size:clamp(34px,9vw,52px);line-height:1.02;text-transform:uppercase;margin-top:14px}
+.member h2 i{font-style:normal;color:var(--accent)}
+.tiers{margin-top:36px;border-top:1px solid var(--darkline)}
+.tier{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 2px;border-bottom:1px solid var(--darkline)}
+.tier b{font-family:Anton,Impact,sans-serif;font-size:21px;letter-spacing:1px;text-transform:uppercase;font-weight:400}
+.tier small{color:#b9b6ad;display:block;margin-top:6px;font-size:13.5px;line-height:1.55;font-family:Inter,sans-serif}
+.tier .tag{display:inline-block;font-size:10px;letter-spacing:2px;color:var(--paper);background:var(--accent);font-weight:700;text-transform:uppercase;padding:4px 9px;margin-bottom:8px;font-family:Inter,sans-serif}
+.tier .price{font-size:12.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;white-space:nowrap;color:var(--paper);border:1.5px solid rgba(243,241,236,.45);padding:10px 14px}
+.member .note{color:#8f8c84;font-size:13px;line-height:1.65;margin-top:20px}
+
+/* QUOTE */
+.quote{max-width:820px;margin:0 auto;padding:68px 20px 0;text-align:left}
+.quote .mark{font-family:Anton,Impact,sans-serif;font-size:44px;color:var(--accent);line-height:.6}
+.quote p{font-size:clamp(23px,6vw,32px);font-weight:600;line-height:1.35;letter-spacing:-.2px;margin-top:18px}
+.quote span{display:block;color:var(--muted);font-size:11px;letter-spacing:2.4px;text-transform:uppercase;font-weight:600;margin-top:18px}
+
+/* VISIT */
+.visit{max-width:820px;margin:0 auto;padding:56px 20px 0}
+.visit .row{display:flex;justify-content:space-between;gap:18px;padding:17px 2px;border-bottom:1px solid var(--line);font-size:15px}
+.visit .row:first-child{border-top:1px solid var(--line)}
+.visit .row span{color:var(--muted);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;padding-top:3px}
+.visit .row b{font-weight:600;text-align:right}
+.dir-wrap{margin-top:24px}
+
+/* FINAL LINE */
+.final{max-width:820px;margin:0 auto;padding:72px 20px 8px;text-align:left}
+.final .big{font-family:Anton,Impact,sans-serif;font-size:clamp(38px,10.5vw,64px);line-height:1;text-transform:uppercase}
+.final .big i{font-style:normal;color:var(--accent)}
+.final p{color:var(--muted);font-size:15px;line-height:1.65;margin-top:16px;max-width:440px}
+.final .btn{margin-top:24px}
+
+footer{padding:44px 20px 6px;text-align:center;overflow:hidden}
+footer .giant{font-family:Anton,Impact,sans-serif;font-size:16.5vw;line-height:.92;color:transparent;-webkit-text-stroke:1.5px rgba(17,17,16,.35);white-space:nowrap;text-transform:uppercase}
+footer p{color:var(--muted);font-size:12.5px;line-height:1.9;margin-top:20px}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--ink);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;z-index:50}
+.sticky a{flex:1;text-align:center;padding:14px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;min-height:50px;display:flex;align-items:center;justify-content:center;border:2px solid transparent}
+.sticky .wa{background:var(--accent);color:#fff}
+.sticky .call{border-color:rgba(243,241,236,.4);color:var(--paper)}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){
+  nav .links{display:none}
+  .fact .v{font-size:24px}
+  .hero h1{-webkit-text-stroke-width:2px}
+  .hero h1 .outline{-webkit-text-stroke:2px var(--ink)}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .marquee .track{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="preview-strip">Private Preview &nbsp;·&nbsp; <b>Prepared for RD Fitness</b> &nbsp;·&nbsp; Prices confirmed by the gym</div>
+
+<nav>
+  <div class="wordmark">RD <span>Fitness</span></div>
+  <div class="links"><a href="#train">Train</a><a href="#membership">Membership</a><a href="#visit">Visit</a></div>
+  <a class="enquire-btn" href="https://wa.me/919805066446?text=Hi%20RD%20Fitness%2C%20I%20would%20like%20to%20enquire%20about%20membership.">Enquire</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-meta">
+    <span>RD Fitness Club · Mandi, HP</span>
+    <span class="r">Rated 4.8 <i>★</i> · 34 Reviews</span>
+  </div>
+  <h1 class="display">
+    <span class="solid">Show up.</span>
+    <span class="outline">Lift heavy.</span>
+    <span class="solid">Get strong<span class="dot">.</span></span>
+  </h1>
+  <p class="hero-sub">No shortcuts, no gimmicks. <b>Strength, cardio, coaching and classes</b> — on School Bazaar Road, open 5 AM to 10 PM. This is where Mandi trains.</p>
+  <div class="cta-row">
+    <a class="btn btn-dark" href="https://wa.me/919805066446?text=Hi%20RD%20Fitness%2C%20I%20would%20like%20to%20enquire%20about%20membership.">Enquire on WhatsApp</a>
+    <a class="btn btn-line" href="tel:+919805066446">Call 98050 66446</a>
+  </div>
+  <p class="hero-note">First visit? Message on WhatsApp — the team will walk you through plans and timings.</p>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Strength <i>•</i> Cardio <i>•</i> Coaching <i>•</i> Group Classes <i>•</i> Personal Training <i>•</i></span>
+    <span>Strength <i>•</i> Cardio <i>•</i> Coaching <i>•</i> Group Classes <i>•</i> Personal Training <i>•</i></span>
+  </div>
+</div>
+
+<div class="facts reveal">
+  <div class="fact"><span class="k">Google Rating</span><span class="v">4.8 ★<small>From 34 member reviews</small></span></div>
+  <div class="fact"><span class="k">Open</span><span class="v">5 AM – 10 PM<small>Monday to Saturday</small></span></div>
+  <div class="fact"><span class="k">Find Us</span><span class="v">ARC Complex<small>School Bazaar Road, Mandi</small></span></div>
+</div>
+
+<section class="section" id="train">
+  <div class="sec-head reveal">
+    <h2>Train <i>your</i> way</h2>
+    <span class="tag">04 Ways In</span>
+  </div>
+
+  <div class="train-row reveal">
+    <div class="num">01</div>
+    <div><h3>Strength Floor</h3><p>Top-quality machines and free weights for strength and muscle gain — maintained, organised, and ready when you are.</p></div>
+  </div>
+  <div class="train-row reveal">
+    <div class="num">02</div>
+    <div><h3>Cardio &amp; Conditioning</h3><p>Build stamina and burn fat with dedicated cardio work, programmed around your goal — not random minutes on a machine.</p></div>
+  </div>
+  <div class="train-row reveal">
+    <div class="num">03</div>
+    <div><h3>Coaching On The Floor</h3><p>Trainers who correct your form, structure your programme, and keep your progress honest — session after session.</p></div>
+  </div>
+  <div class="train-row reveal">
+    <div class="num">04</div>
+    <div><h3>Group Classes</h3><p>High-energy group sessions — including the Bhangra classes members talk about — plus the RD Sports Lounge to recover and belong.</p></div>
+  </div>
+</section>
+
+<section class="member" id="membership">
+  <div class="in">
+    <div class="eyebrow reveal">Membership</div>
+    <h2 class="reveal">Pick a plan.<br>Start <i>today.</i></h2>
+    <div class="tiers">
+      <div class="tier reveal"><div><b>Monthly</b><small>Full access to the floor and classes. The simplest way to start.</small></div><a class="price" href="https://wa.me/919805066446?text=Hi%20RD%20Fitness%2C%20I%20would%20like%20to%20know%20the%20monthly%20plan%20price.">Enquire →</a></div>
+      <div class="tier reveal"><div><b>Quarterly</b><small>Three months. Time enough to see real, visible change.</small></div><a class="price" href="https://wa.me/919805066446?text=Hi%20RD%20Fitness%2C%20I%20would%20like%20to%20know%20the%20quarterly%20plan%20price.">Enquire →</a></div>
+      <div class="tier reveal"><div><span class="tag">Most Chosen</span><br><b>Annual</b><small>Twelve months at the gentlest monthly cost.</small></div><a class="price" href="https://wa.me/919805066446?text=Hi%20RD%20Fitness%2C%20I%20would%20like%20to%20know%20the%20annual%20plan%20price.">Enquire →</a></div>
+    </div>
+    <p class="note">Prices are confirmed by the gym on WhatsApp — this preview carries no invented figures. Final site will carry RD&rsquo;s confirmed plans.</p>
+  </div>
+</section>
+
+<div class="quote reveal">
+  <div class="mark">“</div>
+  <p>This gym in Mandi is simply the best. The machines are top-notch — a must-visit for anyone serious about fitness.</p>
+  <span>Google Review · Rated 4.8 ★</span>
+</div>
+
+<section class="visit reveal" id="visit">
+  <div class="row"><span>Hours</span><b>Mon – Sat · 5:00 AM – 10:00 PM</b></div>
+  <div class="row"><span>Phone</span><b>98050 66446</b></div>
+  <div class="row"><span>Address</span><b>ARC Complex, School Bazaar Road,<br>Mandi, Himachal Pradesh</b></div>
+  <div class="dir-wrap"><a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=RD+Fitness+Club+%26+Gym+School+Bazaar+Road+Mandi">Get Directions</a></div>
+</section>
+
+<div class="final reveal">
+  <div class="big">First step is<br>showing <i>up.</i></div>
+  <p>Send one WhatsApp message. The team replies with plans, prices and the best time for your first session.</p>
+  <a class="btn btn-dark" href="https://wa.me/919805066446?text=Hi%20RD%20Fitness%2C%20I%20would%20like%20to%20enquire%20about%20membership.">Enquire on WhatsApp</a>
+</div>
+
+<footer>
+  <div class="giant">RD Fitness</div>
+  <p>RD Fitness Club &amp; Gym · Mandi · 98050 66446<br>Preview prepared for RD Fitness. No stock photography — the final site can feature the gym&rsquo;s own floor and members.</p>
+</footer>
+
+<div class="sticky">
+  <a class="call" href="tel:+919805066446">Call</a>
+  <a class="wa" href="https://wa.me/919805066446?text=Hi%20RD%20Fitness%2C%20I%20would%20like%20to%20enquire%20about%20membership.">WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold: .14});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  var bar = document.getElementById('progress'), ticking = false;
+  function onScroll(){
+    var y = window.scrollY || 0;
+    var h = document.documentElement.scrollHeight - innerHeight;
+    if(bar && h > 0) bar.style.width = (y / h * 100) + '%';
+    ticking = false;
+  }
+  addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  onScroll();
+})();
+</script>
+</body>
+</html>
